@@ -1,0 +1,27 @@
+{
+  "name": "eatandgreet",
+  "version": "0.1.0",
+  "description": "Eat and Greet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tokanada/EatAndGreet.git"
+  },
+  "keywords": [
+    "food",
+    "friends",
+    "happy"
+  ],
+  "author": "aviancrusader, tokanada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tokanada/EatAndGreet/issues"
+  },
+  "homepage": "https://github.com/tokanada/EatAndGreet#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
