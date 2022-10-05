@@ -1,4 +1,4 @@
-# People who are looking for others while eating
+# For people who are looking for others while eating
 
 #### [Blatant Plagarism](https://play.google.com/store/apps/details?id=com.lightspace.lmk&hl=en_US&gl=US)
 
