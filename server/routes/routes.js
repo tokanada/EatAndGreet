@@ -1,41 +1,10 @@
 const express = require("express");
-const User = require("../models/user");
 const app = express();
 
-app.post("/add_user", async(req, res) => {
-    try {
-        //const hashedPW = bcrypt.hashSync(req.body.password, 12);
+const userController = require("../controllers/user.controller");
 
-        const user = new User({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            password: req.body.password
-        });
+app.post("/add_user", userController.addUser);
 
-        await user.save();
-
-        // const token = jwt.sign({
-        //     email: user.email,
-        //     userId: user._id.toString
-        // }, secret, { expiresIn: '2h' });
-
-        // Generate and Send RES with Cookie
-        res.send(user);
-    } catch (error) {
-        const status = error.statuscode || 500;
-        res.status(status).json({ error: error.data });
-    }
-});
-
-app.get("/users", async(req, res) => {
-    const users = await User.find({});
-
-    try {
-        res.send(users);
-    } catch (error) {
-        res.status(500).send(error);
-    }
-})
+app.get("/users", userController.listCurrentUsers);
 
 module.exports = app;
