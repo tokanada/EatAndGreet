@@ -1,12 +1,15 @@
 require('dotenv').config();
 const dbUri = process.env.DBURI;
 
-const express = require("express");
-const mongoose = require("mongoose");
+const express = require('express');
+const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
+
 const Router = require("./routes/routes")
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 
 mongoose.connect(dbUri, {
     useNewUrlParser: true,
@@ -18,6 +21,7 @@ db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function() {
     console.log("Connected successfully");
 });
+
 app.use(Router);
 
 app.listen(3000, () => {
